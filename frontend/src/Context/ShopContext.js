@@ -1,63 +1,71 @@
-import React, { createContext, useState } from 'react'
-import all_product from '../components/Assets/all_product'
+import React, { createContext, useState, useEffect } from "react";
 
-export const ShopContext = createContext(null);
-const getDefaultCart =()=>{
-    let cart = {};
-    for (let index = 0; index < all_product.length+1; index++) {
-        cart[index]= 0;
-        
+// Create Context
+export const ShopContext = createContext();
+
+const ShopContextProvider = (props) => {
+  const [cartItems, setCartItems] = useState([]);
+
+  // ✅ Fetch all cart items from backend on first load
+  useEffect(() => {
+    fetch("http://localhost:5000/api/cart")
+      .then((res) => res.json())
+      .then((data) => setCartItems(data.items || []))
+      .catch((err) => console.error("Error fetching cart:", err));
+  }, []);
+
+  // ✅ Add item to cart (backend + frontend update)
+  const addToCart = async (productId) => {
+    try {
+      const res = await fetch("http://localhost:5000/api/cart", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ productId, qty: 1 }),
+      });
+
+      const newItem = await res.json();
+
+      // Update React state immediately
+      setCartItems((prev) => [...prev, newItem]);
+      alert("✅ Item added to cart!");
+    } catch (error) {
+      console.error("Error adding to cart:", error);
     }
-    return cart;
-}
-const ShopContextProvider=(props)=>{
+  };
 
-    const [cartItems,setCartItems]=useState(getDefaultCart());
-
-
-    const addToCart =(itemId)=>{
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
-        console.log(cartItems);
-        
+  // ✅ Remove item from cart (backend + frontend update)
+  const removeFromCart = async (id) => {
+    try {
+      await fetch(`http://localhost:5000/api/cart/${id}`, { method: "DELETE" });
+      setCartItems((prev) => prev.filter((item) => item._id !== id));
+    } catch (error) {
+      console.error("Error removing from cart:", error);
     }
-    const removeFromCart =(itemId)=>{
-        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+  };
 
-    }
+  // ✅ Calculate total amount
+  const getTotalCartAmount = () => {
+    return cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
+  };
 
-    const getTotalCartAmount = () => {
-        let totalAmount = 0;
-        for (const item in cartItems) {
-          if (cartItems[item] > 0) {
-            // Find the product by id
-            let itemInfo = all_product.find((product) => product.id === Number(item));
-            // Add the product's total price (new_price * quantity) to totalAmount
-            totalAmount += itemInfo.new_price * cartItems[item];
-          }
-        }
-        return totalAmount; // Move the return statement outside the loop
-      }
-      const getTotalCartItems =()=>{
-        let totalItem = 0;
-        for(const item in cartItems)
-        {
-            if(cartItems[item]>0)
-            {
-                totalItem+= cartItems[item];
-            }
-        }
-        return totalItem;
-      }
+  // ✅ Count total items
+  const getTotalCartItems = () => {
+    return cartItems.reduce((sum, item) => sum + item.qty, 0);
+  };
 
+  return (
+    <ShopContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        getTotalCartAmount,
+        getTotalCartItems,
+      }}
+    >
+      {props.children}
+    </ShopContext.Provider>
+  );
+};
 
-
-
-    const contextValue = {getTotalCartItems,getTotalCartAmount,all_product,cartItems,addToCart,removeFromCart};
-     return (
-        <ShopContext.Provider value={contextValue}>
-            {props.children}
-        </ShopContext.Provider>
-
-    )
-}
 export default ShopContextProvider;
