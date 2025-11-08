@@ -1,15 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import redDress from "../components/Assets/redDress.png";
-import blueJeans from "../components/Assets/blueJeans.png";
-import sneakers from "../components/Assets/sneakers.png";
-import handbag from "../components/Assets/handbag.png";
+
+import product_37 from "../components/Assets/product_37.png";
+import product_40 from "../components/Assets/product_40.png";
+import product_38 from "../components/Assets/product_38.png";
+import product_39 from "../components/Assets/product_39.png";
 
 const featuredProducts = [
-  { id: 1, name: "Red Dress", price: "$49", image: redDress },
-  { id: 2, name: "Blue Jeans", price: "$39", image: blueJeans },
-  { id: 3, name: "Sneakers", price: "$59", image: sneakers },
-  { id: 4, name: "Handbag", price: "$79", image: handbag },
+  { id: 1, name: "Red Dress", price: "$49", image: product_37 },
+  { id: 2, name: "Blue Jeans", price: "$39", image: product_40 },
+  { id: 3, name: "Sneakers", price: "$59", image: product_38},
+  { id: 4, name: "Handbag", price: "$79", image: product_39 },
 ];
 
 const HomePage = () => {
@@ -24,7 +25,7 @@ const HomePage = () => {
       }}>
         <h1 style={{ fontSize: "48px", marginBottom: "20px" }}>Welcome to Nexora Fashion</h1>
         <p style={{ fontSize: "20px", marginBottom: "40px" }}>Discover your style. Trendy fashion just for you!</p>
-        <Link to="/products">
+        <Link to="/Product">
           <button style={{
             padding: "15px 30px",
             fontSize: "18px",
@@ -60,7 +61,8 @@ const HomePage = () => {
               <img src={product.image} alt={product.name} style={{ width: "100%", borderRadius: "10px" }} />
               <h3 style={{ margin: "10px 0" }}>{product.name}</h3>
               <p style={{ fontWeight: "bold" }}>{product.price}</p>
-              <Link to="/products">
+              <Link to={`/product/${product.id}`}>
+
                 <button style={{
                   padding: "10px 15px",
                   backgroundColor: "#ff4d6d",

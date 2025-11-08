@@ -34,6 +34,10 @@ import p33_img from "./product_33.png";
 import p34_img from "./product_34.png";
 import p35_img from "./product_35.png";
 import p36_img from "./product_36.png";
+import p37_img from "./product_37.png";
+import p38_img from "./product_38.png";
+import p39_img from "./product_39.png";
+import p40_img from "./product_40.png";
 
 let all_product = [
   {
@@ -324,6 +328,39 @@ let all_product = [
     new_price: 85.0,
     old_price: 120.5,
   },
+    {
+    id: 37,
+    name: "Red Dress",
+    category: "women",
+    image: p37_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+   {
+    id: 38,
+    name: "Sneakers",
+    category: "men",
+    image: p38_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+   {
+    id: 39,
+    name: "Handbag",
+    category: "women",
+    image: p39_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+   {
+    id: 40,
+    name: "Blue Jeans",
+    category: "kid",
+    image: p40_img,
+    new_price: 85.0,
+    old_price: 120.5,
+  },
+  
 ];
 
 export default all_product;
