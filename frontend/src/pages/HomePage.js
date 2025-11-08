@@ -25,7 +25,7 @@ const HomePage = () => {
       }}>
         <h1 style={{ fontSize: "48px", marginBottom: "20px" }}>Welcome to Nexora Fashion</h1>
         <p style={{ fontSize: "20px", marginBottom: "40px" }}>Discover your style. Trendy fashion just for you!</p>
-        <Link to="/Shop">
+        <Link to="/shopnow">
           <button style={{
             padding: "15px 30px",
             fontSize: "18px",

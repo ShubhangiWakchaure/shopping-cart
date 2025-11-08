@@ -1,5 +1,5 @@
 import React from "react";
-import "./ShopNow.css";
+import "./CSS/ShopNow.css";
 import all_product from "../components/Assets/all_product";
 import { Link } from "react-router-dom";
 
