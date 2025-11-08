@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import redDress from "../Assets/reddress.png"
-import blue_jeans from "../Assets/blue_jeans.png"
-import Sneakers from "../Assets/Sneakers.png"
+import redDress from "../components/Assets/redDress.png";
+import blueJeans from "../components/Assets/blueJeans.png";
+import sneakers from "../components/Assets/sneakers.png";
+import handbag from "../components/Assets/handbag.png";
 
-// Example featured products (you can replace with real images later)
 const featuredProducts = [
-  { id: 1, name: "Red Dress", price: "$49", image: "redDress" },
-  { id: 2, name: "Blue Jeans", price: "$39", image: "blue_jeans" },
-  { id: 3, name: "Sneakers", price: "$59", image: "https://via.placeholder.com/150x200?text=Sneakers" },
-  { id: 4, name: "Handbag", price: "$79", image: "https://via.placeholder.com/150x200?text=Handbag" },
+  { id: 1, name: "Red Dress", price: "$49", image: redDress },
+  { id: 2, name: "Blue Jeans", price: "$39", image: blueJeans },
+  { id: 3, name: "Sneakers", price: "$59", image: sneakers },
+  { id: 4, name: "Handbag", price: "$79", image: handbag },
 ];
 
 const HomePage = () => {
