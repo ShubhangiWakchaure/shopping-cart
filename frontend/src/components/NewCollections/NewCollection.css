@@ -1,0 +1,128 @@
+/* Main Section Styling */
+.new-collections {
+  padding: 40px 20px;
+  margin-bottom: 80px;
+  background-color: #f9f9f9; /* Light background */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Heading */
+.new-collections h1 {
+  font-size: 40px;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Decorative Line */
+.new-collections hr {
+  width: 180px;
+  height: 4px;
+  background-color: #ff6347; /* Tomato color */
+  border: none;
+  border-radius: 10px;
+  margin: 10px auto 30px auto;
+}
+
+/* Product Grid */
+.collections {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+  gap: 25px;
+  justify-items: center;
+  align-items: start;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Product Item Card */
+.collections .item {
+  width: 100%;
+  max-width: 250px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.collections .item:hover {
+  transform: translateY(-8px);
+}
+
+/* Product Image */
+.collections .item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+  transition: transform 0.3s ease-in-out;
+}
+
+.collections .item img:hover {
+  transform: scale(1.05);
+}
+
+/* Product Details */
+.collections .item-details {
+  padding: 10px;
+}
+
+.collections .item-details h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.collections .item-details p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.collections .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.collections .new-price {
+  color: #ff6347;
+  font-weight: bold;
+}
+
+.collections .old-price {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 14px;
+}
+
+/* RESPONSIVENESS */
+
+/* For tablets (3 items per row) */
+@media screen and (max-width: 1024px) {
+  .collections {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* For small tablets & phones (2 items per row) */
+@media screen and (max-width: 768px) {
+  .collections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For small phones (1 item per row) */
+@media screen and (max-width: 480px) {
+  .collections {
+    grid-template-columns: 1fr;
+  }
+}
