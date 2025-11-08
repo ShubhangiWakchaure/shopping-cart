@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import reddress from "../Assets/reddress.png"
 
 // Example featured products (you can replace with real images later)
 const featuredProducts = [
-  { id: 1, name: "Red Dress", price: "$49", image: "" },
+  { id: 1, name: "Red Dress", price: "$49", image: "reddress" },
   { id: 2, name: "Blue Jeans", price: "$39", image: "https://via.placeholder.com/150x200?text=Blue+Jeans" },
   { id: 3, name: "Sneakers", price: "$59", image: "https://via.placeholder.com/150x200?text=Sneakers" },
   { id: 4, name: "Handbag", price: "$79", image: "https://via.placeholder.com/150x200?text=Handbag" },
