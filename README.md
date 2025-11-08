@@ -75,9 +75,7 @@ npm start
 The app will open at http://localhost:3000.
 
 ---
-
-Usage
-
+## Usage
 Browse products on the home page.
 
 Click Add to Cart to include products in your shopping cart.
