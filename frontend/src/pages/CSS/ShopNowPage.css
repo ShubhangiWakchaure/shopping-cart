@@ -1,0 +1,78 @@
+/* ShopNow Page Styling */
+.shopnow-container {
+  padding: 60px 40px;
+  background: linear-gradient(to right, #fff5f7, #ffe8ec);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.shopnow-title {
+  font-size: 2.5rem;
+  color: #ff3366;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.shopnow-subtitle {
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.shopnow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.shopnow-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 230px;
+}
+
+.shopnow-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.shopnow-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.shopnow-name {
+  margin: 15px 0 8px;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.shopnow-price {
+  color: #ff4d6d;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.shopnow-btn {
+  background-color: #ff4d6d;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 0.95rem;
+}
+
+.shopnow-btn:hover {
+  background-color: #e63e5a;
+  transform: scale(1.05);
+}

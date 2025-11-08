@@ -7,10 +7,10 @@ import product_38 from "../components/Assets/product_38.png";
 import product_39 from "../components/Assets/product_39.png";
 
 const featuredProducts = [
-  { id: 1, name: "Red Dress", price: "$49", image: product_37 },
-  { id: 2, name: "Blue Jeans", price: "$39", image: product_40 },
-  { id: 3, name: "Sneakers", price: "$59", image: product_38},
-  { id: 4, name: "Handbag", price: "$79", image: product_39 },
+  { id: 37, name: "Red Dress", price: "$49", image: product_37 },
+  { id: 40, name: "Blue Jeans", price: "$39", image: product_40 },
+  { id: 38, name: "Sneakers", price: "$59", image: product_38},
+  { id: 39, name: "Handbag", price: "$79", image: product_39 },
 ];
 
 const HomePage = () => {
@@ -25,7 +25,7 @@ const HomePage = () => {
       }}>
         <h1 style={{ fontSize: "48px", marginBottom: "20px" }}>Welcome to Nexora Fashion</h1>
         <p style={{ fontSize: "20px", marginBottom: "40px" }}>Discover your style. Trendy fashion just for you!</p>
-        <Link to="/Product">
+        <Link to="/Shop">
           <button style={{
             padding: "15px 30px",
             fontSize: "18px",
